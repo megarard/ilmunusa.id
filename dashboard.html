@@ -1,40 +1,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dashboard IlmuNusa</title>
+  <title>Dashboard IlmuNusa
+  id</title>
 
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: #f2f2f2;
+      background: linear-gradient(to right, #43e97b, #38f9d7);
+      text-align: center;
+      color: white;
     }
 
     .navbar {
       background: #0077ff;
-      color: white;
       padding: 15px;
-      text-align: center;
       font-size: 20px;
-    }
-
-    .content {
-      padding: 30px;
-      text-align: center;
     }
 
     .card {
       background: white;
+      color: black;
+      margin: 20px auto;
       padding: 20px;
-      margin: 15px;
-      border-radius: 10px;
-      display: inline-block;
-      width: 150px;
+      border-radius: 12px;
+      width: 300px;
     }
 
     button {
       padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    .btn-tugas {
+      background: green;
+      color: white;
+    }
+
+    .btn-logout {
       background: red;
+      color: white;
+    }
+
+    img {
+      border-radius: 50%;
+      margin-top: 15px;
+    }
+  </style>
+
+</head>
+<body>
+
+<div class="navbar">
+  Dashboard IlmuNusa 🎓
+</div>
+
+<img src="https://i.ibb.co/4pDNDk1/avatar.png" width="100">
+
+<div class="card">
+  <h2 id="welcome"></h2>
+  <p id="level"></p>
+  <p>Poin: <span id="poin"></span> ⭐</p>
+
+  <button class="btn-tugas" onclick="tambahPoin()">
+    Kerjakan Tugas (+10)
+  </button>
+
+  <button class="btn-logout" onclick="logout()">
+    Logout
+  </button>
+</div>
+
+<script>
+let nama = localStorage.getItem("nama");
+let level = localStorage.getItem("level");
+let poin = localStorage.getItem("poin");
+
+if (!poin) {
+  poin = 0;
+}
+
+document.getElementById("welcome").innerText =
+  "Halo, " + nama + "! 👋";
+
+document.getElementById("level").innerText =
+  "Level: " + level;
+
+document.getElementById("poin").innerText = poin;
+
+function tambahPoin() {
+  poin = parseInt(poin) + 10;
+  localStorage.setItem("poin", poin);
+  document.getElementById("poin").innerText = poin;
+}
+
+function logout() {
+  localStorage.clear();
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>      background: red;
       color: white;
       border: none;
       border-radius: 5px;
