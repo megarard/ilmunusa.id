@@ -2,19 +2,44 @@
 <html>
 <head>
   <title>IlmuNusa</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: white;
+      margin-top: 100px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: white;
+      color: #0077ff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+
 </head>
+<body>
 
-<nav>
-  <h1>ILMUNUSA</h1>
-  <a href="login.html">Login</a>
-</nav>
+<h1>IlmuNusa 🎓</h1>
+<p>Belajar Tanpa Batas Dari SD Sampai Univ 🚀</p>
 
-<h2>Belajar Tanpa Batas</h2>
-<p>Dari Nusantara Untuk Dunia 🌏</p>
+<button onclick="keLogin()">Login</button>
 
-<button onclick="mulaiBelajar()">Mulai Belajar</button>
-  
-<script src="script.js"></script>
+<script>
+  function keLogin() {
+    window.location.href = "login.html";
+  }
+</script>
+
 </body>
 </html>
