@@ -6,36 +6,54 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
       text-align: center;
-      background-color: #f2f2f2;
-      margin-top: 100px;
+      width: 250px;
     }
 
     input {
-      padding: 10px;
-      margin: 10px;
-      width: 200px;
+      width: 90%;
+      padding: 8px;
+      margin: 8px 0;
     }
 
     button {
       padding: 10px 20px;
-      border: none;
-      background-color: #0077ff;
+      background: #0077ff;
       color: white;
+      border: none;
       border-radius: 5px;
       cursor: pointer;
+    }
+
+    button:hover {
+      background: #005fcc;
     }
   </style>
 
 </head>
 <body>
 
-<h2>Login IlmuNusa 🎉</h2>
+<div class="box">
+  <h2>Login IlmuNusa 🎓</h2>
 
-<input type="text" placeholder="Username"><br>
-<input type="password" placeholder="Password"><br>
+  <input type="text" placeholder="Username"><br>
+  <input type="password" placeholder="Password"><br>
 
-<button onclick="alert('Login berhasil! 🚀')">Masuk</button>
+  <button onclick="window.location.href='dashboard.html'">
+    Masuk
+  </button>
+</div>
 
 </body>
 </html>
