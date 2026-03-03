@@ -1,82 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dashboard IlmuNusa
-  id</title>
+  <title>Dashboard IlmuNusa</title>
 
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      background: linear-gradient(to right, #43e97b, #38f9d7);
       text-align: center;
+      background: linear-gradient(to right, #667eea, #764ba2);
       color: white;
-    }
-
-    .navbar {
-      background: #0077ff;
-      padding: 15px;
-      font-size: 20px;
+      margin-top: 100px;
+      transition: 0.3s;
     }
 
     .card {
       background: white;
       color: black;
-      margin: 20px auto;
-      padding: 20px;
-      border-radius: 12px;
+      padding: 25px;
       width: 300px;
+      margin: auto;
+      border-radius: 15px;
+      transition: 0.3s;
     }
 
     button {
       padding: 10px 20px;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
+      background: #667eea;
+      color: white;
       cursor: pointer;
       margin: 5px;
     }
 
-    .btn-tugas {
-      background: green;
+    button:hover {
+      background: #5a67d8;
+    }
+
+    .dark {
+      background: #121212;
       color: white;
     }
 
-    .btn-logout {
-      background: red;
+    .dark .card {
+      background: #1e1e1e;
       color: white;
-    }
-
-    img {
-      border-radius: 50%;
-      margin-top: 15px;
     }
   </style>
 
 </head>
 <body>
 
-<div class="navbar">
-  Dashboard IlmuNusa 🎓
-</div>
-
-<img src="https://i.ibb.co/4pDNDk1/avatar.png" width="100">
+<h1>Dashboard IlmuNusa 🎓</h1>
 
 <div class="card">
-  <h2 id="welcome"></h2>
-  <p id="level"></p>
-  <p>Poin: <span id="poin"></span> ⭐</p>
+  <p>Poin kamu:</p>
+  <h2 id="poin">0 ⭐</h2>
 
-  <button class="btn-tugas" onclick="tambahPoin()">
-    Kerjakan Tugas (+10)
-  </button>
-
-  <button class="btn-logout" onclick="logout()">
-    Logout
-  </button>
+  <button onclick="tambah()">Tambah Poin +10</button>
+  <button onclick="darkMode()">🌙 Dark Mode</button>
 </div>
 
 <script>
-let nama = localStorage.getItem("nama");
+let poin = 0;
+
+function tambah() {
+  poin = poin + 10;
+  document.getElementById("poin").innerText = poin + " ⭐";
+}
+
+function darkMode() {
+  document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>let nama = localStorage.getItem("nama");
 let level = localStorage.getItem("level");
 let poin = localStorage.getItem("poin");
 
