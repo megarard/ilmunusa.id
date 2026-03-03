@@ -5,36 +5,43 @@
 
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: linear-gradient(to right, #667eea, #764ba2);
-      color: white;
-      margin-top: 100px;
-      transition: 0.3s;
+      font-family: Arial;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     .card {
       background: white;
-      color: black;
-      padding: 25px;
-      width: 300px;
-      margin: auto;
+      padding: 30px;
       border-radius: 15px;
-      transition: 0.3s;
+      width: 300px;
+      text-align: center;
     }
+  </style>
+</head>
+<body>
 
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      background: #667eea;
-      color: white;
-      cursor: pointer;
-      margin: 5px;
-    }
+<div class="card">
+  <h2>Welcome 🎉</h2>
+  
+  <p id="namaText"></p>
+  <p id="emailText"></p>
 
-    button:hover {
-      background: #5a67d8;
+</div>
+
+<script>
+let nama = localStorage.getItem("nama");
+let email = localStorage.getItem("email");
+
+document.getElementById("namaText").innerText = "Nama: " + nama;
+document.getElementById("emailText").innerText = "Email: " + email;
+</script>
+
+</body>
+</html>      background: #5a67d8;
     }
 
     .dark {
